@@ -19,91 +19,91 @@ namespace Week03Homework
         public Form1()
         {
             InitializeComponent();
-            lalExpression.TextAlign = ContentAlignment.MiddleRight;
-            lalNumbers.TextAlign = ContentAlignment.MiddleRight;
+            lblExpression.TextAlign = ContentAlignment.MiddleRight;
+            lblNumbers.TextAlign = ContentAlignment.MiddleRight;
         }
 
         private void btnNum0_Click(object sender, EventArgs e)
         {
-            lalExpression.Text += "0";
+            lblExpression.Text += "0";
         }
 
         private void btnNum1_Click(object sender, EventArgs e)
         {
-            lalExpression.Text += "1";
+            lblExpression.Text += "1";
         }
 
         private void btnNum2_Click(object sender, EventArgs e)
         {
-            lalExpression.Text += "2";
+            lblExpression.Text += "2";
         }
 
         private void btnNum3_Click(object sender, EventArgs e)
         {
-            lalExpression.Text += "3";
+            lblExpression.Text += "3";
         }
 
         private void btnNum4_Click(object sender, EventArgs e)
         {
-            lalExpression.Text += "4";
+            lblExpression.Text += "4";
         }
 
         private void btnNum5_Click(object sender, EventArgs e)
         {
-            lalExpression.Text += "5";
+            lblExpression.Text += "5";
         }
 
         private void btnNum6_Click(object sender, EventArgs e)
         {
-            lalExpression.Text += "6";
+            lblExpression.Text += "6";
         }
 
         private void btnNum7_Click(object sender, EventArgs e)
         {
-            lalExpression.Text += "7";
+            lblExpression.Text += "7";
         }
 
         private void btnNum8_Click(object sender, EventArgs e)
         {
-            lalExpression.Text += "8";
+            lblExpression.Text += "8";
         }
 
         private void btnNum9_Click(object sender, EventArgs e)
         {
-            lalExpression.Text += "9";
+            lblExpression.Text += "9";
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            firstNumber = Convert.ToDouble(lalExpression.Text);
+            firstNumber = Convert.ToDouble(lblExpression.Text);
             operation = "+";
-            lalExpression.Text += " + ";
+            lblExpression.Text += " + ";
         }
 
         private void btnSub_Click(object sender, EventArgs e)
         {
-            firstNumber = Convert.ToDouble(lalExpression.Text);
+            firstNumber = Convert.ToDouble(lblExpression.Text);
             operation = "-";
-            lalExpression.Text += " - ";
+            lblExpression.Text += " - ";
         }
 
         private void btnMul_Click(object sender, EventArgs e)
         {
-            firstNumber = Convert.ToDouble(lalExpression.Text);
+            firstNumber = Convert.ToDouble(lblExpression.Text);
             operation = "*";
-            lalExpression.Text += " * ";
+            lblExpression.Text += " * ";
         }
 
         private void btnDiv_Click(object sender, EventArgs e)
         {
-            firstNumber = Convert.ToDouble(lalExpression.Text);
+            firstNumber = Convert.ToDouble(lblExpression.Text);
             operation = "/";
-            lalExpression.Text += " / ";
+            lblExpression.Text += " / ";
         }
 
         private void btnCal_Click(object sender, EventArgs e)
         {
-            string expression = lalExpression.Text;
+            string expression = lblExpression.Text;
             string[] parts = expression.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
             if (parts.Length == 3)
@@ -134,8 +134,8 @@ namespace Week03Homework
                     }
                 }
 
-                lalExpression.Text += " = " + result.ToString();
-                lalNumbers.Text = result.ToString();
+                lblExpression.Text += " = " + result.ToString();
+                lblNumbers.Text = result.ToString();
             }
             else
             {
