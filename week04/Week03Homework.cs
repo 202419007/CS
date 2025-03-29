@@ -1,4 +1,3 @@
-```C#
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -101,4 +100,3 @@ namespace Week03Homework
 
     }
 }
-```
