@@ -14,6 +14,7 @@ namespace Week04Homework
     {
         //인스턴스 필드(변수), 멤버 변수
         Department[] departments;
+        List<Professor> professors;
 
         //생성자
         //인스턴스 생성시 초기화가 필요한 코드를 넣는다.
@@ -21,6 +22,7 @@ namespace Week04Homework
         {
             InitializeComponent();
             departments = new Department[10];
+            professors = new List<Professor>();
         }
 
         private void btnRegisterDepartment_Click(object sender, EventArgs e)
@@ -85,6 +87,55 @@ namespace Week04Homework
                 lbxDepartment.Items.RemoveAt(lbxDepartment.SelectedIndex);
 
                 lbxDepartment.SelectedIndex = -1;
+            }
+        }
+
+        private void tabMain_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (tabMain.SelectedIndex)
+            {
+                case 0:
+                    break;
+                case 1:
+                    cmbProfessorDepartment.Items.Clear();
+                    foreach (var department in departments)
+                    {
+                        if (department != null)
+                        {
+                            cmbProfessorDepartment.Items.Add(department);
+                        }
+                    }
+
+                    cmbProfessorDepartment.SelectedIndex = -1;
+                    lbxProfessor.Items.Clear();
+
+                    break;
+                case 2:
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void cmbProfessorDepartment_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //index값 검사해서 진행여부 결정
+
+            lbxProfessor.Items.Clear();
+            
+            //as 형변환 연산자.
+            //형변환이 정상적이지 않으면 null 변환.
+            var department = cmbProfessorDepartment.SelectedItem as Department;
+
+            if (department != null)
+            {
+                foreach(var professor in professors)
+                {
+                    if (professor != null && professor.DepartmentCode == department.Code)
+                    {
+                        lbxProfessor.Items.Add(professor);
+                    }
+                }
             }
         }
     }
