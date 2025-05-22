@@ -1,4 +1,4 @@
-// 전 코드랑 바뀐거 확인
+// 전 코드랑 바뀐거 없음
 using System;
 using System.Collections.Generic;
 using System.Linq;
