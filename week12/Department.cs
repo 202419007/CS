@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Week09Homework
 {
@@ -55,6 +56,11 @@ namespace Week09Homework
             return $"[{Code}] {Name}";
         }
 
+        public string Record
+        {
+            get { return $"{Code}|{Name}"; }
+        }
+
 #if false
         public Department()
         {
@@ -66,6 +72,22 @@ namespace Week09Homework
         {
             Code = code;
             Name = name;
+        }
+
+        public static Department Restore(string record)
+        {
+            Department dept = null;
+            //참고
+            try {
+                var splitdatas = record.Trim().Split(new char[] { '|' });
+                dept = new Department(splitdatas[0], splitdatas[1]);
+            } catch (IndexOutOfRangeException ex) {
+                MessageBox.Show("파일 포맷이 잘못되었음");
+                Console.WriteLine(ex);
+            } catch (Exception ex) {
+                Console.WriteLine(ex);
+            }
+            return dept;
         }
     }
 }
