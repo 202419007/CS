@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Proj_FinacialLedger
+namespace Proj_FinacialLedger_202419007
 {
     abstract class Financial
     {
